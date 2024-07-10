@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resturant/constant.dart';
+import 'package:resturant/screens/home/header.dart';
 import 'package:resturant/screens/home/menu.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,63 +27,74 @@ class _HomeScreenState extends State<HomeScreen> {
                   constraints: BoxConstraints(maxWidth: kMaxWidth),
                   child: Column(
                     children: [
+                      header(),
+                      SizedBox(
+                        height: 50,
+                      ),
                       Row(
                         children: [
-                          Text(
-                            "Foodie",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: kSecondaryColor),
-                          ),
-                          //
-                          //menu bar for web
-                          Spacer(),
-                          HeaderWebMenu(),
-                          Spacer(),
                           Expanded(
-                              child: Container(
-                            padding: EdgeInsets.only(left: 10.0),
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Colors.black54.withOpacity(0.5))),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    fillColor: const Color.fromARGB(
-                                        255, 255, 255, 255),
-                                    filled: true,
-                                    hintText: "Search For Products",
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide.none),
-                                    prefixIcon: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Icon(Icons.search),
-                                    )),
-                              ),
+                            flex: 3,
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Eat Today!",
+                                  style: TextStyle(
+                                      fontSize: 56,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Live another Day",
+                                  style: TextStyle(
+                                    fontSize: 40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                      fillColor: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      filled: true,
+                                      hintText: "Search For Favourite Food",
+                                      focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide.none),
+                                      suffixIcon: Icon(
+                                        Icons.adjust_sharp,
+                                        color: kSecondaryColor,
+                                      )),
+                                ),
+                              ],
                             ),
-                          )),
-                          SizedBox(
-                            width: 10,
                           ),
-                          Container(
-                            height: 45,
-                            width: 45,
-                            decoration: BoxDecoration(
-                              color: kSecondaryColor,
-                              borderRadius: BorderRadius.circular(10.0),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/banner4.png',
+                                  width: MediaQuery.of(context).size.width,
+                                ),
+                              ],
                             ),
-                            child: Icon(
-                              Icons.shopping_bag_outlined,
-                              color: Colors.white,
-                              size: 22,
-                            ),
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 )

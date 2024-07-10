@@ -76,10 +76,6 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-Black.ttf
           # style: italic
-    - family: Roboto, sans-serif
-      fonts:
-        - asset: assets/fonts/Roboto-Black.ttf
-          weight: 700
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
